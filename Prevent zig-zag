@@ -29,7 +29,7 @@ def reward_function(params):
 
 
     # Steering penality threshold, change the number based on your action space setting
-    ABS_STEERING_THRESHOLD = 15
+    ABS_STEERING_THRESHOLD = 15 #increase in angle makes it worse
 
 
     # Penalize reward if the car is steering too much
