@@ -7,6 +7,7 @@ def reward_function(params):
     track_width = params['track_width']
     track_length = params['track_length']
     speed = params['speed']
+    abs_steering = abs(params['steering_angle'])
     
     radius = track_length*0.16
     
@@ -36,6 +37,13 @@ def reward_function(params):
         # High reward if the car stays on track and goes fast
         reward = 2.0
 
+
+    # Steering penality threshold, change the number based on your action space setting
+    ABS_STEERING_THRESHOLD = 15 
+    
+    # Penalize reward if the car is steering too much
+    if abs_steering > ABS_STEERING_THRESHOLD:
+        reward *= 0.8
 
     # Always return a float value
     return float(reward)
