@@ -31,4 +31,4 @@ def reward_function(params):
     if abs_steering > ABS_STEERING_THRESHOLD:
         reward *= 0.8
         
-    return float(reward)
+    return float(reward) #experimenting
